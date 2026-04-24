@@ -1,38 +1,41 @@
-# atividade_todo_vue (com Vue CLI)
+# Lista de Tarefas — Vue 3 (com Vue CLI)
 
-This template should help get you started developing with Vue 3 in Vite.
+Refatoração de uma lista de tarefas feita em JavaScript puro para Vue 3,
+organizada em componentes utilizando Vue CLI.
 
-## Recommended IDE Setup
+## Como usar
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. Abra o terminal na pasta do projeto
+2. Instale as dependências:
 
-## Recommended Browser Setup
+   npm install
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+3. Rode o servidor de desenvolvimento:
 
-## Customize configuration
+   npm run dev
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+4. Acesse no navegador: http://localhost:5173
 
-## Project Setup
+## Funcionalidades
 
-```sh
-npm install
-```
+- Adicionar tarefa pelo campo de texto ou pressionando Enter
+- Clicar na tarefa para marcar como concluída
+- Botão "x" para remover a tarefa
 
-### Compile and Hot-Reload for Development
+## Estrutura do projeto
 
-```sh
-npm run dev
-```
+src/
+├── main.js
+├── App.vue
+└── components/
+├── TarefaForm.vue
+└── TarefaItem.vue
 
-### Compile and Minify for Production
+- `App.vue` — componente principal, gerencia a lista de tarefas
+- `TarefaForm.vue` — cuida do campo de entrada e botão de adicionar
+- `TarefaItem.vue` — representa cada tarefa individualmente
 
-```sh
-npm run build
-```
+## Tecnologias
+
+- Vue 3
+- Vite
