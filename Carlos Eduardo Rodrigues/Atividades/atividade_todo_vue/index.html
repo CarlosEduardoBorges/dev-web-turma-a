@@ -2,16 +2,49 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Tarefas</title>
+  <title>Lista de Tarefas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 { text-align: center; }
+    .entrada { display: flex; gap: 8px; margin-bottom: 20px; }
+    input[type="text"] { flex: 1; padding: 8px; font-size: 15px; }
+    button { padding: 8px 14px; cursor: pointer; }
+    ul { list-style: none; padding: 0; }
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+    }
+    li.concluida { text-decoration: line-through; color: gray; }
+    .fechar {
+      background: none;
+      border: none;
+      color: red;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    p { color: gray; text-align: center; }
+  </style>
 </head>
 <body>
 
   <div id="app">
-    <h1>Tarefas</h1>
+    <h1>Lista de Tarefas</h1>
 
-    <div>
-      <input type="text" v-model="novaTarefa" placeholder="Digite sua Tarefa!">
-      <button @click="adicionarTarefa">+</button>
+    <div class="entrada">
+      <input type="text" v-model="novaTarefa"
+        placeholder="Nova tarefa..."
+        @keyup.enter="adicionarTarefa">
+      <button @click="adicionarTarefa">Adicionar</button>
     </div>
 
     <ul>
@@ -19,9 +52,11 @@
           @click.self="marcarConcluida(index)"
           :class="{ concluida: tarefa.concluida }">
         {{ tarefa.texto }}
-        <button @click="removerTarefa(index)">x</button>
+        <button class="fechar" @click="removerTarefa(index)">x</button>
       </li>
     </ul>
+
+    <p v-if="tarefas.length === 0">Nenhuma tarefa ainda.</p>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
