@@ -10,8 +10,8 @@
     <h1>Lista de Tarefas</h1>
 
     <div>
-      <input type="text" placeholder="Nova tarefa...">
-      <button>Adicionar</button>
+      <input type="text" v-model="novaTarefa" placeholder="Nova tarefa...">
+      <button @click="adicionarTarefa">Adicionar</button>
     </div>
 
     <ul>
@@ -29,10 +29,17 @@
       data() {
         return {
           novaTarefa: '',
-          tarefas: [
-            { texto: 'Estudar Vue', concluida: false },
-            { texto: 'Fazer a atividade', concluida: false }
-          ]
+          tarefas: []
+        }
+      },
+      methods: {
+        adicionarTarefa() {
+          if (this.novaTarefa.trim() === '') return
+          this.tarefas.push({
+            texto: this.novaTarefa,
+            concluida: false
+          })
+          this.novaTarefa = ''
         }
       }
     }).mount('#app')
