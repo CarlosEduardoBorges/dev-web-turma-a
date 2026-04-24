@@ -5,15 +5,24 @@
   <title>Lista de Tarefas</title>
 </head>
 <body>
-  <h1>Lista de Tarefas</h1>
 
-  <div>
-    <input type="text" placeholder="Nova tarefa...">
-    <button>Adicionar</button>
+  <div id="app">
+    <h1>Lista de Tarefas</h1>
+    <p>{{ mensagem }}</p>
   </div>
 
-  <ul>
-    <li>Tarefa de exemplo</li>
-  </ul>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          mensagem: 'Vue funcionando!'
+        }
+      }
+    }).mount('#app')
+  </script>
+
 </body>
 </html>
