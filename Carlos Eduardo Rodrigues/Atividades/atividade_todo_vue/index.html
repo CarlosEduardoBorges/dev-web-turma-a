@@ -2,23 +2,24 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Lista de Tarefas</title>
+  <title>Tarefas</title>
 </head>
 <body>
 
   <div id="app">
-    <h1>Lista de Tarefas</h1>
+    <h1>Tarefas</h1>
 
     <div>
-      <input type="text" v-model="novaTarefa" placeholder="Nova tarefa...">
-      <button @click="adicionarTarefa">Adicionar</button>
+      <input type="text" v-model="novaTarefa" placeholder="Digite sua Tarefa!">
+      <button @click="adicionarTarefa">+</button>
     </div>
 
     <ul>
-      <li v-for="(tarefa, index) in tarefas" :key="index">
-        <input type="checkbox" v-model="tarefa.concluida">
-        <span>{{ tarefa.texto }}</span>
-        <button @click="removerTarefa(index)">Remover</button>
+      <li v-for="(tarefa, index) in tarefas" :key="index"
+          @click.self="marcarConcluida(index)"
+          :class="{ concluida: tarefa.concluida }">
+        {{ tarefa.texto }}
+        <button @click="removerTarefa(index)">x</button>
       </li>
     </ul>
   </div>
@@ -42,6 +43,9 @@
             concluida: false
           })
           this.novaTarefa = ''
+        },
+        marcarConcluida(index) {
+          this.tarefas[index].concluida = !this.tarefas[index].concluida
         },
         removerTarefa(index) {
           this.tarefas.splice(index, 1)
