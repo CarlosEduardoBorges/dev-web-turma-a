@@ -16,7 +16,9 @@
 
     <ul>
       <li v-for="(tarefa, index) in tarefas" :key="index">
-        {{ tarefa.texto }}
+        <input type="checkbox" v-model="tarefa.concluida">
+        <span>{{ tarefa.texto }}</span>
+        <button @click="removerTarefa(index)">Remover</button>
       </li>
     </ul>
   </div>
@@ -40,6 +42,9 @@
             concluida: false
           })
           this.novaTarefa = ''
+        },
+        removerTarefa(index) {
+          this.tarefas.splice(index, 1)
         }
       }
     }).mount('#app')
