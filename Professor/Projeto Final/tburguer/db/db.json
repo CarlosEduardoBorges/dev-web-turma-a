@@ -45,7 +45,7 @@
   ],
   "pedidos": [
     {
-      "nome": "Fernando",
+      "nome": "fernando",
       "ponto": {
         "id": 1,
         "descricao": "Ao ponto"
@@ -60,7 +60,7 @@
           "eh_novidade": false
         }
       ],
-      "complementos": [
+      "complemento": [
         {
           "id": 1,
           "nome": "Combo Bebida + Batata",
@@ -70,8 +70,7 @@
           "eh_novidade": true
         }
       ],
-      "statusId": 6,
-      "hamburguer": {
+      "burguer": {
         "id": 1,
         "nome": "Diretoria Alterado",
         "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696429768651d76c8124dc_75_75.jpeg",
@@ -79,44 +78,8 @@
         "valor": 35,
         "eh_novidade": true
       },
-      "id": 2
-    },
-    {
-      "nome": "Arthur",
-      "ponto": {
-        "id": 4,
-        "descricao": "Boi morreu a toa!"
-      },
-      "bebidas": [
-        {
-          "id": 3,
-          "nome": "Coca Cola Zero Lata 310 ml",
-          "descricao": "",
-          "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431455651d7d5fd3661_75_75.jpeg",
-          "valor": 6,
-          "eh_novidade": false
-        }
-      ],
-      "complemento": [
-        {
-          "id": 2,
-          "nome": "Batata ondulada sequinha e crocante temperada com lemon pepper",
-          "descricao": "",
-          "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431513651d7d99094b6_75_75.jpeg",
-          "valor": 7,
-          "eh_novidade": false
-        }
-      ],
-      "burguer": {
-        "id": 3,
-        "nome": "Doritos",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696429871651d772fb9fbe_75_75.jpeg",
-        "descricao": "Delicioso pão de brioche selado na brasa com manteiga de leite, maionese especial, suculento blend de 160 gramas, queijo cheddar derretido na brasa, cream cheese e Doritos.",
-        "valor": 32,
-        "eh_novidade": true
-      },
       "statusId": 5,
-      "id": 3
+      "id": 1
     }
   ],
   "opcionais": {
