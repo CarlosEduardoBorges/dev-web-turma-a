@@ -2,7 +2,7 @@
   <div>
     <nav id="nav">
       <router-link to="/" id="logo-url">
-        <img src="/img/logo_tburguer.png" id="logo" />
+        <img src="~@/../public/img/LOGO-TSUSHI.png" id="logo" />
       </router-link>
       <router-link to="/">Home</router-link> |
       <router-link to="/menu">Menu</router-link> |
@@ -10,11 +10,13 @@
     </nav>
   </div>
 </template>
+
 <script>
 export default {
   name: "NavBarComponent",
 };
 </script>
+
 <style scoped>
 #logo {
   width: 60px;
@@ -34,8 +36,8 @@ export default {
 }
 
 #nav {
-  background-color: #333;
-  border-bottom: darkgoldenrod 4px solid;
+  background-color: #1a2744;
+  border-bottom: #c0392b 4px solid;
   padding: 15px 50px;
   display: flex;
   justify-content: flex-end;
@@ -43,14 +45,14 @@ export default {
 }
 
 #nav a {
-  color: darkgoldenrod;
+  color: #f5f0e8;
   text-decoration: none;
   margin-left: 20px;
   font-size: 18px;
 }
 
 #nav a:hover {
-  color: white;
+  color: #e74c3c;
   font-size: 22px;
   transition: 0.2s;
 }

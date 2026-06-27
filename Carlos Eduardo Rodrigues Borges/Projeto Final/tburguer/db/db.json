@@ -1,20 +1,20 @@
 {
-  "tipos_pontos": [
+  "tipos_combo": [
     {
       "id": 1,
-      "descricao": "Ao ponto"
+      "descricao": "Combinado"
     },
     {
       "id": 2,
-      "descricao": "Bem passada"
+      "descricao": "À la carte"
     },
     {
       "id": 3,
-      "descricao": "Mal passada"
+      "descricao": "Temaki"
     },
     {
       "id": 4,
-      "descricao": "Boi morreu a toa!"
+      "descricao": "Barca"
     }
   ],
   "status_pedido": [
@@ -45,131 +45,142 @@
   ],
   "pedidos": [
     {
-      "nome": "Fernando",
-      "ponto": {
+      "nome": "João Silva",
+      "combo": {
         "id": 1,
-        "descricao": "Ao ponto"
+        "descricao": "Combinado"
       },
       "bebidas": [
         {
           "id": 1,
-          "nome": "Coca Cola Lata 310 ml",
+          "nome": "Chá verde gelado 500ml",
           "descricao": "",
-          "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431408651d7d30645b9_75_75.jpeg",
-          "valor": 6,
+          "foto": "",
+          "valor": 9,
           "eh_novidade": false
-        }
-      ],
-      "complementos": [
+        },
         {
-          "id": 1,
-          "nome": "Combo Bebida + Batata",
-          "descricao": "Batata ondulada sequinha e crocante temperada com lemon pepper + bebida de sua escolha",
-          "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431534651d7daeba24e_75_75.jpeg",
+          "id": 3,
+          "nome": "Suco natural 300ml",
+          "descricao": "",
+          "foto": "",
           "valor": 11,
+          "eh_novidade": false
+        },
+        {
+          "id": 2,
+          "nome": "Refrigerante lata 350ml",
+          "descricao": "",
+          "foto": "",
+          "valor": 7,
+          "eh_novidade": false
+        },
+        {
+          "id": 4,
+          "nome": "Ramune (refrigerante japonês)",
+          "descricao": "",
+          "foto": "",
+          "valor": 14,
           "eh_novidade": true
         }
       ],
-      "statusId": 6,
-      "hamburguer": {
-        "id": 1,
-        "nome": "Diretoria Alterado",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696429768651d76c8124dc_75_75.jpeg",
-        "descricao": "Delicioso pão de brioche selado na brasa com manteiga de leite, maionese especial de alho e ervas, tomate grelhado e defumado na brasa, suculento blend de 160 gramas, queijo derretido na brasa, molho suave de gorgonzola coberto de crispy de alho poró.",
-        "valor": 35,
-        "eh_novidade": true
-      },
-      "id": 2
-    },
-    {
-      "nome": "Arthur",
-      "ponto": {
-        "id": 4,
-        "descricao": "Boi morreu a toa!"
-      },
-      "bebidas": [
+      "acompanhamentos": [
+        {
+          "id": 1,
+          "nome": "Missoshiru",
+          "descricao": "Sopa tradicional japonesa de missô com tofu, alga wakame e cebolinha.",
+          "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Sushi1.jpg?width=400",
+          "valor": 12,
+          "eh_novidade": false
+        },
         {
           "id": 3,
-          "nome": "Coca Cola Zero Lata 310 ml",
-          "descricao": "",
-          "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431455651d7d5fd3661_75_75.jpeg",
-          "valor": 6,
+          "nome": "Edamame",
+          "descricao": "Vagens de soja cozidas no vapor e finalizadas com flor de sal.",
+          "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Edamame_and_sushi_by_maximus_pinche.jpg?width=400",
+          "valor": 16,
           "eh_novidade": false
-        }
-      ],
-      "complemento": [
+        },
         {
           "id": 2,
-          "nome": "Batata ondulada sequinha e crocante temperada com lemon pepper",
-          "descricao": "",
-          "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431513651d7d99094b6_75_75.jpeg",
-          "valor": 7,
-          "eh_novidade": false
+          "nome": "Guioza (6 unidades)",
+          "descricao": "Pastéis japoneses grelhados recheados com carne suína e legumes, servidos com molho shoyu agridoce.",
+          "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/My_sushi_plate_(13466556973).jpg?width=400",
+          "valor": 22,
+          "eh_novidade": true
         }
       ],
-      "burguer": {
-        "id": 3,
-        "nome": "Doritos",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696429871651d772fb9fbe_75_75.jpeg",
-        "descricao": "Delicioso pão de brioche selado na brasa com manteiga de leite, maionese especial, suculento blend de 160 gramas, queijo cheddar derretido na brasa, cream cheese e Doritos.",
-        "valor": 32,
+      "prato": {
+        "id": 1,
+        "nome": "Combinado Salmão (15 peças)",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/2014-369-307_Sushi_9_Pack_(15706536415).jpg?width=400",
+        "descricao": "Seleção do mestre com niguiris, sashimis e uramakis de salmão fresco, montados na hora.",
+        "valor": 49,
         "eh_novidade": true
       },
-      "statusId": 5,
-      "id": 3
+      "statusId": "5",
+      "id": 10
     }
   ],
   "opcionais": {
-    "complemento": [
+    "acompanhamentos": [
       {
         "id": 1,
-        "nome": "Combo Bebida + Batata",
-        "descricao": "Batata ondulada sequinha e crocante temperada com lemon pepper + bebida de sua escolha",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431534651d7daeba24e_75_75.jpeg",
-        "valor": 11,
-        "eh_novidade": true
+        "nome": "Missoshiru",
+        "descricao": "Sopa tradicional japonesa de missô com tofu, alga wakame e cebolinha.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Sushi1.jpg?width=400",
+        "valor": 12,
+        "eh_novidade": false
       },
       {
         "id": 2,
-        "nome": "Batata ondulada sequinha e crocante temperada com lemon pepper",
-        "descricao": "",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431513651d7d99094b6_75_75.jpeg",
-        "valor": 7,
+        "nome": "Guioza (6 unidades)",
+        "descricao": "Pastéis japoneses grelhados recheados com carne suína e legumes, servidos com molho shoyu agridoce.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/My_sushi_plate_(13466556973).jpg?width=400",
+        "valor": 22,
+        "eh_novidade": true
+      },
+      {
+        "id": 3,
+        "nome": "Edamame",
+        "descricao": "Vagens de soja cozidas no vapor e finalizadas com flor de sal.",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Edamame_and_sushi_by_maximus_pinche.jpg?width=400",
+        "valor": 16,
         "eh_novidade": false
       }
     ],
     "bebidas": [
       {
         "id": 1,
-        "nome": "Coca Cola Lata 310 ml",
+        "nome": "Chá verde gelado 500ml",
         "descricao": "",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431408651d7d30645b9_75_75.jpeg",
-        "valor": 6,
+        "foto": "",
+        "valor": 9,
         "eh_novidade": false
       },
       {
         "id": 2,
-        "nome": "Shweppes Citrus 310 ml",
+        "nome": "Refrigerante lata 350ml",
         "descricao": "",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/16966989566521924cc9418_75_75.jpeg",
-        "valor": 6,
+        "foto": "",
+        "valor": 7,
         "eh_novidade": false
       },
       {
         "id": 3,
-        "nome": "Coca Cola Zero Lata 310 ml",
+        "nome": "Suco natural 300ml",
         "descricao": "",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431455651d7d5fd3661_75_75.jpeg",
-        "valor": 6,
+        "foto": "",
+        "valor": 11,
         "eh_novidade": false
       },
       {
         "id": 4,
-        "nome": "Del Valle Uva Lata 290 ml",
+        "nome": "Ramune (refrigerante japonês)",
         "descricao": "",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696431434651d7d4a1e285_75_75.jpeg",
-        "valor": 7,
-        "eh_novidade": false
+        "foto": "",
+        "valor": 14,
+        "eh_novidade": true
       }
     ]
   },
@@ -177,68 +188,68 @@
     "limitado": [
       {
         "id": 1,
-        "nome": "Arretado",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1698926982654391866e311_75_75.jpeg",
-        "descricao": "Delicioso pão de brioche selado na brasa com manteiga de leite, maionese especial de alho e ervas, suculento blend de 160 gramas flambado na manteiga de garrafa, coberto de queijo coalho e finalizado com geléia de pimenta Queensberry",
-        "valor": 38,
+        "nome": "Combinado do Mestre (edição limitada, 30 peças)",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Nigiri_Sushi_(25966163204).jpg?width=400",
+        "descricao": "Combinado especial preparado pelo sushiman titular: cortes premium de salmão, atum e peixe branco, niguiris flambados e uramakis especiais da casa. Disponível por tempo limitado.",
+        "valor": 89,
         "eh_novidade": true
       }
     ],
-    "burgues": [
+    "pratos": [
       {
         "id": 1,
-        "nome": "Diretoria Alterado",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696429768651d76c8124dc_75_75.jpeg",
-        "descricao": "Delicioso pão de brioche selado na brasa com manteiga de leite, maionese especial de alho e ervas, tomate grelhado e defumado na brasa, suculento blend de 160 gramas, queijo derretido na brasa, molho suave de gorgonzola coberto de crispy de alho poró.",
-        "valor": 35,
+        "nome": "Combinado Salmão (15 peças)",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/2014-369-307_Sushi_9_Pack_(15706536415).jpg?width=400",
+        "descricao": "Seleção do mestre com niguiris, sashimis e uramakis de salmão fresco, montados na hora.",
+        "valor": 49,
         "eh_novidade": true
       },
       {
         "id": 2,
-        "nome": "Veggie",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696429812651d76f4d8671_75_75.jpeg",
-        "descricao": "Delicioso pão de brioche selado na brasa com manteiga de leite, maionese secreta, tomate assado e defumado na lenha frutífera, blend de arroz negro, batata baroa e Shimeji 150 gramas grelhado e regado ao azeite , queijo derretido na brasa e molho secreto de cebola caramelizada, tudo preparado com aquele sabor de churrasco.",
-        "valor": 35,
+        "nome": "Combinado Especial (20 peças)",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/16_pieces_of_maki-zushi.jpg?width=400",
+        "descricao": "Mix variado de salmão, atum e kani com uramakis, niguiris e hossomakis para dividir.",
+        "valor": 69,
         "eh_novidade": true
       },
       {
         "id": 3,
-        "nome": "Doritos",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696429871651d772fb9fbe_75_75.jpeg",
-        "descricao": "Delicioso pão de brioche selado na brasa com manteiga de leite, maionese especial, suculento blend de 160 gramas, queijo cheddar derretido na brasa, cream cheese e Doritos.",
+        "nome": "Temaki Salmão",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Temaki_sushi.jpg?width=400",
+        "descricao": "Cone crocante de alga nori recheado com arroz temperado, salmão fresco e cream cheese.",
         "valor": 32,
-        "eh_novidade": true
+        "eh_novidade": false
       },
       {
         "id": 4,
-        "nome": "Campeiro",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696432070651d7fc6b7c98_75_75.jpeg",
-        "descricao": "Delicioso pão de brioche selado na brasa com manteiga de leite, maionese especial de alho e ervas, alface americana fresca e crocante, tomate grelhado e defumado, suculento hambúrguer de 160 gramas, queijo derretido na brasa.",
-        "valor": 30,
-        "eh_novidade": true
+        "nome": "Temaki Califórnia",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Temaki_sushi.jpg?width=400",
+        "descricao": "Temaki refrescante com kani, pepino, manga e maionese japonesa envolvidos em nori e arroz.",
+        "valor": 28,
+        "eh_novidade": false
       },
       {
         "id": 5,
-        "nome": "Braseirão",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1701549228656b94ac481d3_75_75.jpeg",
-        "descricao": "Delicioso hambúrguer no pão de brioche selado na brasa, com manteiga de leite, maionese especial com toque de alho e ervas, dois suculentos blend's de 160 gramas e queijo mussarela derretido na brasa.",
-        "valor": 30,
+        "nome": "Hot Philadelphia (8 peças)",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Sushi1.jpg?width=400",
+        "descricao": "Uramaki empanado e frito por fora, recheado com salmão e cream cheese, finalizado com molho tarê.",
+        "valor": 36,
         "eh_novidade": true
       },
       {
         "id": 6,
-        "nome": "Braseiro",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/1696432090651d7fda3ebe1_75_75.jpeg",
-        "descricao": "Delicioso hambúrguer no pão de brioche selado na brasa, com manteiga de leite, maionese especial com toque de alho e ervas, suculento blend de 160 gramas, triplo queijo cheddar derretido na brasa.",
-        "valor": 20,
-        "eh_novidade": true
+        "nome": "Uramaki Philadelphia (8 peças)",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/My_sushi_plate_(13466556973).jpg?width=400",
+        "descricao": "Roll invertido com arroz por fora, recheio de salmão e cream cheese, coberto com gergelim.",
+        "valor": 34,
+        "eh_novidade": false
       },
       {
         "id": 7,
-        "nome": "Churrasqueto",
-        "foto": "https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/itens/16978359266532eb960c34d_75_75.jpeg",
-        "descricao": "Delicioso hambúrguer no pão de brioche selado na brasa, com manteiga de leite, maionese especial com toque de alho e ervas, suculento blend de 120 gramas, triplo queijo cheddar derretido na brasa.",
-        "valor": 15,
+        "nome": "Barca Premium (40 peças)",
+        "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Nigiri_Sushi_(26478725732).jpg?width=400",
+        "descricao": "Barca completa para compartilhar: combinação farta de niguiris, sashimis, uramakis e hots variados.",
+        "valor": 129,
         "eh_novidade": true
       }
     ]

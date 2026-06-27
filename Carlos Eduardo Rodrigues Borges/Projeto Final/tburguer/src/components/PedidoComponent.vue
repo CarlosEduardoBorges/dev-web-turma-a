@@ -1,15 +1,19 @@
 <template>
   <div>
+    <!-- ✅ PASSO 6 — Alerta reativo (aparece/some conforme mensagemAlerta) -->
+    <AlertaComponent :tipo="tipoAlerta" :mensagem="mensagemAlerta" />
+
     <form id="pedido-form" @submit="criarPedido($event)">
       <div>
-        <p id="nome-hamburguer-content">
-          {{ burguer && burguer.nome ? burguer.nome : "-" }}
+        <p id="nome-prato-content">
+          {{ prato && prato.nome ? prato.nome : "-" }}
         </p>
         <img
           id="foto-content"
-          :src="burguer && burguer.foto ? burguer.foto : ''"
+          :src="prato && prato.foto ? prato.foto : ''"
         />
       </div>
+
       <div class="inputs" id="form-pedido">
         <label for="nome-cliente">Nome</label>
         <input
@@ -20,42 +24,44 @@
           placeholder="Digite seu Nome"
         />
       </div>
+
       <div class="inputs">
-        <label>Ponto da carne</label>
+        <label>Tipo de Combo</label>
         <select
-          name="ponto-carne"
-          id="ponto-carne"
-          v-model="pontoCarneSelecionado"
+          name="tipo-combo"
+          id="tipo-combo"
+          v-model="comboSelecionado"
         >
-          <option value="" selected>Selecione o ponto</option>
+          <option value="" selected>Selecione o combo</option>
           <option
-            v-for="pontoCarne in listaPontoCarne"
-            :key="pontoCarne.id"
-            :value="pontoCarne"
+            v-for="combo in listaTiposCombo"
+            :key="combo.id"
+            :value="combo"
           >
-            {{ pontoCarne.descricao }}
+            {{ combo.descricao }}
           </option>
         </select>
       </div>
+
       <div class="inputs">
-        <label id="opcionais-titulo"> Selecione os opcionais</label>
-        <label id="opcionais-subtitulo"> Selecione os complementos</label>
+        <label id="opcionais-titulo">Selecione os opcionais</label>
+        <label id="opcionais-subtitulo">Acompanhamentos</label>
 
         <div
           class="checkbox-container"
-          v-for="complemento in listaComplementos"
-          :key="complemento.id"
+          v-for="acompanhamento in listaAcompanhamentos"
+          :key="acompanhamento.id"
         >
           <input
             type="checkbox"
-            :name="complemento.nome"
-            :value="complemento"
-            v-model="listaComplementosSelecionados"
+            :name="acompanhamento.nome"
+            :value="acompanhamento"
+            v-model="listaAcompanamentosSelecionados"
           />
-          <span>{{ complemento.nome }}</span>
+          <span>{{ acompanhamento.nome }}</span>
         </div>
 
-        <label> Adicione uma bebida</label>
+        <label>Adicione uma bebida</label>
 
         <div
           class="checkbox-container"
@@ -71,6 +77,7 @@
           />
           <span>{{ bebida.nome }}</span>
         </div>
+
         <div class="inputs">
           <input type="submit" class="submit-btn" value="Confirmar Pedido" />
         </div>
@@ -78,64 +85,95 @@
     </form>
   </div>
 </template>
+
 <script>
+import AlertaComponent from "./AlertaComponent.vue";
+
 export default {
   name: "PedidoComponent",
-  props: {
-    burguer: null,
+
+  // ✅ PASSO 6 — registra o filho
+  components: {
+    AlertaComponent,
   },
+
+  props: {
+    prato: null,
+  },
+
   data() {
     return {
-      listaPontoCarne: [],
+      listaTiposCombo: [],
       listaBebidas: [],
-      listaComplementos: [],
+      listaAcompanhamentos: [],
       nomeCliente: "",
-      pontoCarneSelecionado: "",
-      listaComplementosSelecionados: [],
+      comboSelecionado: "",
+      listaAcompanamentosSelecionados: [],
       listaBebidasSelecionadas: [],
+      // ✅ PASSO 6 — estado do alerta
+      tipoAlerta: "",
+      mensagemAlerta: "",
     };
   },
+
   methods: {
-    async getTipoPontos() {
-      const response = await fetch("http://localhost:3000/tipos_pontos");
+    async getTiposCombo() {
+      const response = await fetch(`${this.$apiUrl}/tipos_combo`);
       const dados = await response.json();
-      this.listaPontoCarne = dados;
+      this.listaTiposCombo = dados;
     },
+
     async getOpcionais() {
-      const response = await fetch("http://localhost:3000/opcionais");
+      const response = await fetch(`${this.$apiUrl}/opcionais`);
       const dados = await response.json();
-      this.listaComplementos = dados.complemento;
+      this.listaAcompanhamentos = dados.acompanhamentos;
       this.listaBebidas = dados.bebidas;
     },
+
     async criarPedido(e) {
       e.preventDefault();
 
+      // ✅ PASSO 6 — validação antes do POST
+      if (!this.nomeCliente || !this.comboSelecionado) {
+        this.tipoAlerta = "erro";
+        this.mensagemAlerta = "Preencha o nome e o tipo de combo.";
+        return;
+      }
+
       const dadosPedido = {
         nome: this.nomeCliente,
-        ponto: this.pontoCarneSelecionado,
+        combo: this.comboSelecionado,
         bebidas: Array.from(this.listaBebidasSelecionadas),
-        complemento: Array.from(this.listaComplementosSelecionados),
-        burguer: this.burguer,
+        acompanhamentos: Array.from(this.listaAcompanamentosSelecionados),
+        prato: this.prato,
         statusId: 5,
       };
 
-      console.log(dadosPedido);
-
       const dadosJson = JSON.stringify(dadosPedido);
 
-      const req = await fetch("http://localhost:3000/pedidos", {
+      await fetch(`${this.$apiUrl}/pedidos`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: dadosJson,
       });
+
+      // ✅ PASSO 6 — feedback de sucesso + redirecionamento após 1.5s
+      this.tipoAlerta = "sucesso";
+      this.mensagemAlerta = "Pedido criado com sucesso!";
+
+      setTimeout(() => {
+        this.$router.push("/pedidos");
+      }, 1500);
     },
   },
+
   mounted() {
-    this.getTipoPontos();
+    this.getTiposCombo();
     this.getOpcionais();
   },
 };
 </script>
+
 <style scoped>
 #foto-content {
   margin-bottom: 16px;
@@ -148,7 +186,7 @@ export default {
   object-fit: cover;
 }
 
-#nome-hamburguer-content {
+#nome-prato-content {
   font-size: 43px;
   font-weight: bold;
   text-align: start;
@@ -176,7 +214,7 @@ label {
   padding: 5px 12px;
   flex-direction: start;
   display: flex;
-  border-left: 4px solid darkgoldenrod;
+  border-left: 4px solid #c0392b;
 }
 
 input,
@@ -217,8 +255,8 @@ select {
 }
 
 .submit-btn {
-  background-color: #222;
-  color: darkgoldenrod;
+  background-color: #1a2744;
+  color: #f5f0e8;
   font-weight: bold;
   border: none;
   font-size: 18px;
@@ -232,7 +270,7 @@ select {
 }
 
 .submit-btn:hover {
-  background-color: darkgoldenrod;
-  color: #222;
+  background-color: #c0392b;
+  color: #f5f0e8;
 }
 </style>

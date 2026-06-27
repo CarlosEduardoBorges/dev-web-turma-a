@@ -5,9 +5,11 @@
     <router-view />
   </div>
 </template>
+
 <script>
 import NavBarComponent from "./components/NavBarComponent.vue";
 import BannerComponent from "./components/BannerComponent.vue";
+
 export default {
   name: "App",
   components: {
@@ -16,6 +18,7 @@ export default {
   },
 };
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -35,6 +38,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #c0392b;
 }
 </style>

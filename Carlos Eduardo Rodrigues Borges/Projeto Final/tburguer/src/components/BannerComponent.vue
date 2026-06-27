@@ -1,29 +1,27 @@
 <template>
   <div id="main-banner">
-    <h1>Hamburguer de churrasqueiro</h1>
+    <img src="~@/../public/img/BANNER_SUSHI.png" id="banner-img" />
   </div>
 </template>
+
 <script>
 export default {
   name: "BannerComponent",
 };
 </script>
+
 <style scoped>
 #main-banner {
-  background-image: url("/public/img/banner.jpeg");
-  height: 300px;
-  background-position: 0;
-  background-size: cover;
+  width: 100%;
+  background-color: #1a2744;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
-#main-banner h1 {
-  font-size: 40px;
-  color: antiquewhite;
-  background: #333;
-  padding: 25px;
-  border-radius: 100px 0px 0px 100px;
+#banner-img {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  display: block;
 }
 </style>

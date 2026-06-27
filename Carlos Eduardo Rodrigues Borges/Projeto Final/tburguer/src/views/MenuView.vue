@@ -1,20 +1,20 @@
 <template>
   <div>
-    <h1>Menu</h1>
+    <h1>Cardápio</h1>
     <div id="scroll-horizontal">
       <div
         id="card-content"
-        v-for="burguer in listaMenuHamburgues"
-        :key="burguer.id"
+        v-for="prato in listaMenuPratos"
+        :key="prato.id"
       >
         <div id="card-linha">
-          <div class="foto-hamburguer">
-            <img :src="burguer.foto" alt="nome do burguer" />
+          <div class="foto-prato">
+            <img :src="prato.foto" alt="foto do prato" />
             <div class="card-coluna">
-              <p id="nome-content">{{ burguer.nome }}</p>
-              <p id="preco-content">R$ {{ burguer.valor }},00</p>
-              <p id="descricao-content">{{ burguer.descricao }}</p>
-              <button @click="selecionarBurguer(burguer)">Selecionar</button>
+              <p id="nome-content">{{ prato.nome }}</p>
+              <p id="preco-content">R$ {{ prato.valor }},00</p>
+              <p id="descricao-content">{{ prato.descricao }}</p>
+              <button @click="selecionarPrato(prato)">Selecionar</button>
             </div>
           </div>
         </div>
@@ -27,20 +27,20 @@ export default {
   name: "MenuView",
   data() {
     return {
-      listaMenuHamburgues: [],
+      listaMenuPratos: [],
     };
   },
   methods: {
     async consultarMenu() {
       const response = await fetch(`${this.$apiUrl}/menu`);
       const dados = await response.json();
-      this.listaMenuHamburgues = dados.burgues;
-      console.log(this.listaMenuHamburgues);
+      this.listaMenuPratos = dados.pratos;
+      console.log(this.listaMenuPratos);
     },
-    selecionarBurguer(burguerSelecionado) {
-      const param = JSON.stringify(burguerSelecionado);
-      const burguerJson = encodeURIComponent(param);
-      this.$router.push({ path: "/config", query: { burguer: burguerJson } });
+    selecionarPrato(pratoSelecionado) {
+      const param = JSON.stringify(pratoSelecionado);
+      const pratoJson = encodeURIComponent(param);
+      this.$router.push({ path: "/config", query: { prato: pratoJson } });
     },
   },
   mounted() {
@@ -70,7 +70,7 @@ export default {
   box-shadow: inset -10px 0px 15px -15px grey;
 }
 
-.foto-hamburguer img {
+.foto-prato img {
   width: 100%;
   object-fit: cover;
   max-height: 200px;
@@ -103,13 +103,14 @@ export default {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 6;
+  line-clamp: 6;
   -webkit-box-orient: vertical;
 }
 
 .card-coluna button {
   margin-top: auto;
   padding: 10px;
-  background-color: rgb(53, 108, 121);
+  background-color: #1a2744;
   color: #fff;
   font-weight: bold;
   border-radius: 8px;
@@ -123,8 +124,8 @@ export default {
 
 .card-coluna button:hover {
   background-color: transparent;
-  color: darkslategray;
+  color: #1a2744;
   border-radius: 8px;
-  border: solid 1px rgb(53, 108, 121);
+  border: solid 1px #c0392b;
 }
 </style>
