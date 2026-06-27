@@ -6,9 +6,9 @@ A API está hospedada no plano gratuito do Render. Na primeira abertura do site,
 
 | Recurso | URL |
 |---------|-----|
-| Aplicação (Vercel) | _em breve_ |
+| Aplicação (Vercel) | https://tburguer-eta.vercel.app |
 | API (Render) | _em breve_ |
-| Repositório Front-end | _em breve_ |
+| Repositório Front-end | https://github.com/CarlosEduardoBorges/dev-web-turma-a |
 
 ## 📌 Visão Geral
 
